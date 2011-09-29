@@ -68,3 +68,130 @@ Processing PostsController#index (for 127.0.0.1 at 2011-09-29 10:12:13) [GET]
   [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
 Rendering posts/index
 Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2011-09-29 10:16:16) [GET]
+Rendering posts/new
+Rendered posts/_form (75.4ms)
+Completed in 90ms (View: 86, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2011-09-29 10:17:33) [POST]
+  Parameters: {"commit"=>"Save changes", "post"=>{"price"=>"$200000", "artist"=>"Renoire", "date(1i)"=>"2011", "date(2i)"=>"9", "title"=>"Afternoon on the Grand Jete", "date(3i)"=>"29", "date(4i)"=>"16", "date(5i)"=>"16", "description"=>"This classic painting is an excellent example of pointillism, a delicate art..."}, "authenticity_token"=>"Tz7CT7J03N2GTkJx0Mg41r3B2qDE2pk92Q4Xv3cnslM="}
+  [4;36;1mPost Create (0.4ms)[0m   [0;1mINSERT INTO "posts" ("artist", "price", "created_at", "title", "updated_at", "date", "description") VALUES('Renoire', 0.0, '2011-09-29 16:17:33', 'Afternoon on the Grand Jete', '2011-09-29 16:17:33', '2011-09-29 16:16:00', 'This classic painting is an excellent example of pointillism, a delicate art...')[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 190ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2011-09-29 10:17:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering posts/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2011-09-29 10:17:36) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering posts/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110929161128)
+Migrating to AddAttachmentsPhotoToPost (20110929162507)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "posts" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "posts" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "posts" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "posts" ADD "photo_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110929162507')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2011-09-29 10:25:30) [GET]
+
+SyntaxError (/home/ben/cs422/layout_ex/app/models/post.rb:13: syntax error, unexpected kEND):
+  app/controllers/posts_controller.rb:3:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2011-09-29 10:25:42) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `has_attached_file' for #<Class:0xb6852814>):
+  app/models/post.rb:4
+  app/controllers/posts_controller.rb:3:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (107.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2011-09-29 10:28:23) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `has_attached_file' for #<Class:0xb678c574>):
+  app/models/post.rb:4
+  app/controllers/posts_controller.rb:3:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
