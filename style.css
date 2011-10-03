@@ -1,0 +1,118 @@
+body {
+  background: #333;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+    Header
+*/
+
+header {
+  background: #000;
+  border-bottom: 1px solid #aaa;
+}
+
+header h1 {
+  margin: 0;
+  padding: .5em 1em;
+  color: #aaa;
+  font-family: 'Georgia';
+  font-style: oblique;
+  font-size: 36pt;
+  width: 40%;
+  float: left;
+}
+
+/*
+    Nav
+*/
+
+nav {
+  background:#000;
+  float: right;
+  margin-right: 6em;
+}
+
+nav ul {
+  list-style-type: none;
+  display: block;
+  margin: 0;
+}
+
+nav ul li {
+  float: left;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 18pt;
+  display: block;
+  padding-top: 1.8em;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-style: oblique;
+}
+
+/*
+    Section
+*/
+
+section ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 0 auto;
+}
+
+section ul li {
+  float:left;
+  display: block;
+  width:30%;
+  height: 50%;
+  overflow: hidden;
+  margin: 0px;
+  z-index: 0;
+  opacity: .6;
+  -webkit-transform: scale(.9);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 500ms;
+}
+
+section ul li:hover {
+  box-shadow: 0 0 30px #000;
+  z-index: 2 !important;
+  -webkit-transform: scale(1.1);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 200ms;
+  opacity: 1;
+}
+
+section ul li a img {
+  width:200%;
+  margin: -20% -20%;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 2s;
+}
+
+section ul li:hover a img {
+  width:130%;
+  margin: 0;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 500ms;
+}
+
+/*
+    Footer
+*/
+
+footer {
+  background: #000;
+  border-top: 1px solid #aaa;
+  color: #aaa;
+  padding: 2em 0 2em 6em;
+}
+
+.clear {
+  clear: both;
+}
