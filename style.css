@@ -9,8 +9,11 @@ body {
 */
 
 header {
-  background: #000;
+  background: #400;
   border-bottom: 1px solid #aaa;
+  box-shadow:inset 0 0 30px #000;
+  -webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 10s;
 }
 
 header h1 a {
@@ -19,7 +22,7 @@ header h1 a {
   color: #aaa;
   font-family: 'Georgia';
   font-style: oblique;
-  font-size: 36pt;
+  font-size: 34pt;
   width: 40%;
   float: left;
   text-decoration: none;
@@ -39,7 +42,6 @@ h1 a:hover {
 */
 
 nav {
-  background:#000;
   float: right;
   margin-right: 6em;
 }
@@ -106,7 +108,7 @@ section ul li a img {
   width:200%;
   margin: -20% -20%;
   -webkit-transition-timing-function: ease-out;
-  -webkit-transition-duration: 2s;
+  -webkit-transition-duration: 500ms;
 }
 
 section ul li:hover a img {
@@ -150,11 +152,11 @@ dl {
 
 dt {
   float: left;
-  width: 100px;
+  width: 120px;
 }
 
 #right span a {
-  color: #333;
+  color: #500;
 }
 
 input[type="text"] {
