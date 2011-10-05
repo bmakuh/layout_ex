@@ -13,7 +13,7 @@ header {
   border-bottom: 1px solid #aaa;
 }
 
-header h1 {
+header h1 a {
   margin: 0;
   padding: .5em 1em;
   color: #aaa;
@@ -22,6 +22,16 @@ header h1 {
   font-size: 36pt;
   width: 40%;
   float: left;
+  text-decoration: none;
+  -webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 1000ms;
+}
+
+h1 a:hover {
+  color: #fff;
+  text-shadow: 0 0 15px #fff;
+  -webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 200ms;
 }
 
 /*
@@ -46,13 +56,17 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: #ccc;
   font-size: 18pt;
   display: block;
   padding-top: 1.8em;
   text-decoration: none;
   text-transform: lowercase;
   font-style: oblique;
+}
+
+li a:hover {
+  color: #fff;
 }
 
 /*
@@ -100,6 +114,53 @@ section ul li:hover a img {
   margin: 0;
   -webkit-transition-timing-function: ease-out;
   -webkit-transition-duration: 500ms;
+}
+
+/*
+    Photograph on show page
+*/
+
+#left {
+  float: left;
+  width: 60%;
+}
+
+#left img {
+  width:100%;
+  margin: 1em;
+  box-shadow:0 0 15px #000;
+}
+
+#right {
+  width: 32%;
+  float: right;
+  margin: 1em;
+  padding: .5em .8em;
+  box-shadow:0 0 15px #000;
+  background: #fcfff4;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(40%,#dfe5d7), color-stop(100%,#b3bead));
+  background: -webkit-linear-gradient(top, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%);
+  background: linear-gradient(top, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%);
+}
+
+dl {
+  clear: both;
+  color: #555;
+}
+
+dt {
+  float: left;
+  width: 100px;
+}
+
+#right span a {
+  color: #333;
+}
+
+input[type="text"] {
+  width: 30px;
+  border: 1px solid #888;
+  border-radius: 2px;
 }
 
 /*
